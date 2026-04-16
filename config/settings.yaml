@@ -1,0 +1,40 @@
+# 系统配置
+
+# 调度配置
+schedule:
+  enabled: true
+  cron: "0 9 * * *"  # 每天早上 9:00 执行
+  timezone: "Asia/Shanghai"
+
+# LLM Configuration
+llm:
+  provider: "qwen"
+  model: "qwen-plus"
+  temperature: 0.7
+  max_tokens: 2000
+  timeout: 30
+
+# 采集配置
+crawler:
+  timeout: 30  # 秒
+  max_retries: 3
+  retry_delay: 2  # 秒
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+
+# 推送配置
+notifier:
+  enabled: true
+  max_retries: 3
+  retry_delay: 2  # 秒
+
+# 数据库配置
+database:
+  path: "data/intelligence.db"
+  backup_enabled: false
+
+# 日志配置
+logging:
+  level: "INFO"
+  file: "logs/app.log"
+  rotation: "10 MB"
+  retention: "30 days"

@@ -1,0 +1,70 @@
+# Data source configuration
+
+sources:
+  - name: "国家密码管理局"
+    url: "https://www.nca.gov.cn"
+    type: "static_web"
+    enabled: true
+    category: "政策"
+    
+  - name: "工业和信息化部"
+    url: "https://www.miit.gov.cn"
+    type: "static_web"
+    enabled: true
+    category: "政策"
+    
+  - name: "e签宝"
+    url: "https://www.esign.cn/news"
+    type: "dynamic_web"
+    enabled: true
+    category: "竞品"
+    wait_time: 3
+    scroll: true
+    
+  - name: "DigiCert"
+    url: "https://www.digicert.com/blog"
+    type: "dynamic_web"
+    enabled: true
+    category: "竞品"
+    wait_time: 3
+    scroll: true
+    
+  - name: "CFCA"
+    url: "https://www.cfca.com.cn"
+    type: "static_web"
+    enabled: true
+    category: "竞品"
+
+# MCP Examples (disabled by default, requires API keys)
+
+# Firecrawl MCP - High quality web scraping
+  - name: "DigiCert (Firecrawl)"
+    url: "https://www.digicert.com/blog"
+    type: "firecrawl"
+    enabled: false
+    category: "竞品"
+    formats: ["markdown", "html"]
+    only_main_content: true
+
+# GitHub MCP - Repository monitoring
+  - name: "CAB Forum Server Certificate"
+    url: "https://github.com/cabforum/servercert"
+    type: "github"
+    enabled: false
+    category: "合规"
+    monitor_types: ["commits", "issues", "pulls", "releases"]
+    since_days: 7
+
+# RSS Feed examples
+  - name: "IETF RFC"
+    url: "https://www.rfc-editor.org/rfcrss.xml"
+    type: "rss"
+    enabled: false
+    category: "技术"
+    
+# PDF examples
+  - name: "NIST SP 800-57"
+    url: "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf"
+    type: "pdf"
+    enabled: false
+    category: "技术"
